@@ -2,11 +2,10 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    # Category URLs
 
     # Product URLs
-    path('products/', ProductViewSet.as_view({'get': 'list', 'post': 'create'}), name='product_list'),
-    path('products/<int:pk>/', ProductViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='product_detail'),
+    path('', ProductViewSet.as_view({'get': 'list', 'post': 'create'}), name='product_list'),
+    path('<int:pk>/', ProductViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}), name='product_detail'),
 
     # Extra URLs
     path('extras/', ExtraViewSet.as_view({'get': 'list', 'post': 'create'}), name='extra_list'),
